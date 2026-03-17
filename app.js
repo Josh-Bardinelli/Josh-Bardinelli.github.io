@@ -21,7 +21,7 @@ const resumeData = {
     {
       company: "Whelen Engineering Company",
       role: "Cybersecurity Intern (Software Development)",
-      date: "Jul 2022 -c Jan 2025",
+      date: "Jul 2022 - Jan 2025",
       bullets: [
         "Evaluated and tested secure code training solutions, presenting findings to IT leadership along with a recommendation on which solution to implement",
         "Monitored EDR software for alerts and investigated security threats in sandbox environment",
@@ -135,17 +135,3 @@ app.appendChild(createSection(
     r.details
   )
 ));
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
-  });
-});
-
-document.querySelectorAll(".card").forEach(el => {
-  observer.observe(el);
-});
-
-
