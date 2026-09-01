@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport">
   <title>Joshua Bardinelli</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -8,11 +10,72 @@
 
   <header>
     <h1>Joshua Bardinelli</h1>
-    <p>Computer Science | Systems | Security</p>
-    <a href="assets/resume.pdf">Download PDF</a>
+    <p>Software Developement | Cybersecurity | Machine Learning</p>
+    <a class="pdf-link" href="assets/resume.pdf">Download Resume PDF</a>
   </header>
 
-  <main id="app"></main>
+  <nav id="tabs" aria-label="Sections">
+    <a class="tab" href="#resume">Resume</a>
+    <a class="tab" href="#about">About Me</a>
+    <a class = "tab" href="#projects">Projects</a>
+    <a class="tab" href="#contact">Contact Me</a>
+  </nav>
+
+  <main>
+
+    <section class="view" id="view-resume" data-tab="resume">
+      <div id="app"></div>
+    </section>
+
+    <section class="view" id="view-about" data-tab="about">
+      <div class="section">
+        <h2>About Me</h2>
+        <p>
+          I'm a computer scientist that graduated from the University of Connecticut
+          with a B.S. in Computer Science with a minor in mathematics, and an M.S.
+          in computer science and engineering. Throughout my education and work experience
+          I have built strong skills in programming, cybersecurity, information technology,
+          and machine learning. I have more in-depth experience in systems programming, DNS,
+          and virtualization.
+        </p>
+        <p>
+          My research on <strong>hyDNS</strong>, an accelerated DNS resolver using eBPF
+          to run entirely in kernel space, was published at the SIGCOMM eBPF Workshop '24.
+          Professionally, I have experience in cybersecurity work (threat investigation,
+          EDR monitoring, application security) and building software, most recently
+          implementing novel data linkage algorithms for AlgorithmicPro AI.
+        </p>
+        <p>
+          For personal projects, I enjoy creating and building web-based videogames. My 
+          current project is called JTrivia and is a Jeopardy-style trivia game. I am currently
+          working on expanding the features, but the game is playable at <a href="https://jtrivia.app">JTrivia.app</a>. 
+          I also enjoy working collaboratively on these projects with some of my friends
+          who are also software developers. 
+        </p>
+      </div>
+    </section>
+
+    <section class="view" id="view-projects" data-tab="projects">
+      <div class="section">
+        <h2>Projects</h2>
+
+      </div>
+    </section>
+
+    <section class="view" id="view-contact" data-tab="contact">
+      <div class="section">
+        <h2>Contact Me</h2>
+        <p>The fastest way to reach me is email. I'm happy to talk about roles, research, or collaboration.</p>
+
+        <ul class="contact-list">
+          <li><span class="contact-label">Email</span><a href="mailto:joshb1303@gmail.com">joshb1303@gmail.com</a></li>
+          <li><span class="contact-label">LinkedIn</span><a href="https://www.linkedin.com/in/joshua-bardinelli">https://www.linkedin.com/in/joshua-bardinelli</a></li>
+          <li><span class="contact-label">GitHub</span><a href="https://github.com/Josh-Bardinelli">https://github.com/Josh-Bardinelli</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
 
   <script src="app.js"></script>
 </body>

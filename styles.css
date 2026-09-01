@@ -32,11 +32,73 @@ body {
   overflow: hidden;
   transition: max-height 0.35s ease, opacity 0.3s ease;
   opacity: 0;
-  padding: 0 1rem;
+  margin: 0;
+  padding: 0 1rem 0 2.5rem;
 }
 
 .card.open .card-content {
-  max-height: 300px;
+  max-height: 60rem;
   opacity: 1;
-  padding: 1rem;
+  padding: 0 1rem 1rem 2.5rem;
+}
+
+.card-content li {
+  margin: 0.4rem 0;
+}
+
+header .pdf-link {
+  color: #7aa2f7;
+}
+
+nav#tabs {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid #2a2f3a;
+  margin: 1.5rem 0 2rem;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 0.75rem 1.25rem;
+  color: #9aa5b1;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.tab:hover {
+  color: #eaeaea;
+}
+
+.tab.active {
+  color: #eaeaea;
+  border-bottom-color: #7aa2f7;
+}
+
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-list li {
+  margin: 0.75rem 0;
+}
+
+.contact-label {
+  display: inline-block;
+  width: 6rem;
+  color: #9aa5b1;
+}
+
+.contact-list a {
+  color: #7aa2f7;
 }

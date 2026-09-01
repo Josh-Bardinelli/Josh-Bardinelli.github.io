@@ -12,7 +12,7 @@ const resumeData = {
     },
     {
       school: "University of Connecticut",
-      degree: "M.S. Computer Science",
+      degree: "M.S. Computer Science and Engineering",
       date: "May 2026"
     }
   ],
@@ -81,7 +81,7 @@ function createExpandableCard(title, subtitle, contentItems) {
   header.className = "card-header";
   header.innerHTML = `<strong>${title}</strong><br><span>${subtitle}</span>`;
 
-  const content = document.createElement("div");
+  const content = document.createElement("ul");
   content.className = "card-content";
 
   contentItems.forEach(text => {
@@ -135,3 +135,36 @@ app.appendChild(createSection(
     r.details
   )
 ));
+
+
+// Tab navigation
+
+const TABS = ["resume", "about", "projects", "contact"];
+const DEFAULT_TAB = "resume";
+
+function showTab(name) {
+  const active = TABS.includes(name) ? name : DEFAULT_TAB;
+
+  document.querySelectorAll(".view").forEach(view => {
+    view.classList.toggle("active", view.dataset.tab === active);
+  });
+
+  document.querySelectorAll(".tab").forEach(tab => {
+    const isActive = tab.getAttribute("href") === `#${active}`;
+    tab.classList.toggle("active", isActive);
+
+    if (isActive) {
+      tab.setAttribute("aria-current", "page");
+    } else {
+      tab.removeAttribute("aria-current");
+    }
+  });
+}
+
+function currentTab() {
+  return window.location.hash.replace("#", "");
+}
+
+window.addEventListener("hashchange", () => showTab(currentTab()));
+
+showTab(currentTab());
